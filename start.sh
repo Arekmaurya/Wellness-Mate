@@ -5,14 +5,14 @@ echo "🚀 Starting Ollama server..."
 ollama serve &
 sleep 5
 
-# Check if the psychiatrist model already exists (cached via volume)
+# Check if the psychiatrist model already exists
 if ollama list | grep -q "psychiatrist"; then
     echo "✅ Model 'psychiatrist' already exists, skipping creation."
 else
     echo "📦 Creating 'psychiatrist' model from Modelfile..."
-    ollama create psychiatrist -f /app/Modelfile
+    ollama create psychiatrist -f ./Modelfile
     echo "✅ Model 'psychiatrist' created successfully."
 fi
 
 echo "🌿 Starting Wellness Mate..."
-streamlit run main.py --server.port=8501 --server.address=0.0.0.0
+streamlit run main.py --server.port=7860 --server.address=0.0.0.0

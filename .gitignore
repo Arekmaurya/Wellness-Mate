@@ -27,3 +27,6 @@ Thumbs.db
 
 # HF Space (separate deployment)
 hf-space/
+
+# Sensitive
+resume_text.txt

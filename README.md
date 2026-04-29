@@ -1,3 +1,12 @@
+---
+title: Wellness Mate
+emoji: 🌿
+colorFrom: green
+colorTo: pink
+sdk: docker
+app_port: 7860
+---
+
 # 🌿 Wellness Mate
 
 A compassionate AI wellness chatbot powered by a fine-tuned **psychiatrist LLM** (LLaMA 3.1 8B). Built with **Streamlit** and **Ollama**.

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Wellness Mate — Major Project Presentation</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--mint:#89c9b8;--pink:#d16d8c;--lavender:#b8a9d4;--soft-bg:rgba(20,20,35,0.85);--card:rgba(255,255,255,0.07)}
+.reveal{font-family:'Inter',sans-serif}
+.reveal h1,.reveal h2,.reveal h3{font-family:'Inter',sans-serif;font-weight:700;text-transform:none;letter-spacing:-0.02em}
+.reveal h1{font-size:2.8em;background:linear-gradient(135deg,var(--mint),var(--lavender));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.reveal h2{font-size:1.8em;color:var(--mint)}
+.reveal h3{font-size:1.2em;color:var(--lavender)}
+.reveal p,.reveal li{font-size:0.72em;line-height:1.6;color:#d0d0d8}
+.reveal ul{list-style:none;padding-left:0}
+.reveal li{padding:0.3em 0;padding-left:1.4em;position:relative}
+.reveal li::before{content:'▸';position:absolute;left:0;color:var(--mint);font-weight:700}
+.reveal .slides section{padding:40px}
+.subtitle{font-size:0.55em!important;color:#a0a0b0!important;font-weight:300;letter-spacing:0.05em;margin-top:10px}
+.tag{display:inline-block;background:var(--card);border:1px solid rgba(137,201,184,0.3);border-radius:20px;padding:6px 16px;margin:4px;font-size:0.55em;color:var(--mint)}
+.card{background:var(--card);border-radius:16px;padding:28px;margin:12px 0;border:1px solid rgba(255,255,255,0.06);text-align:left;backdrop-filter:blur(10px)}
+.card h3{margin:0 0 8px 0;font-size:1em}
+.card p{margin:0;font-size:0.65em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:20px}
+.highlight{color:var(--mint);font-weight:600}
+.emoji-big{font-size:2em;margin-bottom:8px}
+.arch-box{background:linear-gradient(135deg,rgba(137,201,184,0.15),rgba(184,169,212,0.15));border-radius:16px;padding:30px;border:1px solid rgba(137,201,184,0.2);margin:20px auto;max-width:800px}
+.arch-flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-size:0.7em;margin:15px 0}
+.arch-node{background:var(--card);border-radius:12px;padding:14px 20px;border:1px solid rgba(137,201,184,0.25);text-align:center;min-width:130px}
+.arch-node .node-title{color:var(--mint);font-weight:600;font-size:0.9em}
+.arch-node .node-sub{color:#a0a0b0;font-size:0.75em;margin-top:4px}
+.arch-arrow{color:var(--lavender);font-size:1.5em;font-weight:300}
+.imp-before{background:rgba(209,109,140,0.12);border:1px solid rgba(209,109,140,0.3);border-radius:12px;padding:16px;margin:6px 0;text-align:left}
+.imp-after{background:rgba(137,201,184,0.12);border:1px solid rgba(137,201,184,0.3);border-radius:12px;padding:16px;margin:6px 0;text-align:left}
+.imp-before h3{color:var(--pink)!important;font-size:0.85em;margin:0 0 6px 0}
+.imp-after h3{color:var(--mint)!important;font-size:0.85em;margin:0 0 6px 0}
+.imp-before p,.imp-after p{font-size:0.6em;margin:3px 0}
+.stat-number{font-size:2.2em;font-weight:800;background:linear-gradient(135deg,var(--mint),var(--lavender));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:0.55em;color:#a0a0b0;margin-top:4px}
+.footer-info{font-size:0.45em;color:#707080;margin-top:30px}
+code{background:rgba(137,201,184,0.15);color:var(--mint);padding:2px 8px;border-radius:6px;font-size:0.85em}
+.slide-number{color:var(--mint)!important}
+.reveal .progress span{background:linear-gradient(90deg,var(--mint),var(--lavender))!important}
+.scrollable-content { max-height: 620px; overflow-y: auto; padding-right: 15px; }
+.scrollable-content::-webkit-scrollbar { width: 6px; }
+.scrollable-content::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 4px; }
+.scrollable-content::-webkit-scrollbar-thumb { background: rgba(137,201,184,0.5); border-radius: 4px; }
+.scrollable-content::-webkit-scrollbar-thumb:hover { background: var(--mint); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1: Title -->
+<section>
+<p style="font-size:3em;margin-bottom:0">🌿</p>
+<h1>Wellness Mate</h1>
+<p class="subtitle">A Compassionate AI Wellness Chatbot Powered by Fine-Tuned LLaMA 3.1</p>
+<div style="margin-top:40px">
+<p style="font-size:0.6em;color:#a0a0b0">
+<strong style="color:var(--mint)">Harsh Maurya</strong><br/>
+B.Tech ECE (AIML Specialization)<br/>
+Maharaja Agrasen Institute of Technology, Delhi<br/>
+2023 – 2026
+</p>
+</div>
+<p style="font-size:0.45em;color:#606070;margin-top:20px">Major Project Presentation • April 2026</p>
+</section>
+
+<!-- SLIDE 2: Problem Statement -->
+<section>
+<h2>📌 Problem Statement</h2>
+<div class="grid2">
+<div class="card">
+<div class="emoji-big">😰</div>
+<h3>The Mental Health Gap</h3>
+<p>Over <span class="highlight">150 million Indians</span> need mental health support, but fewer than 1 in 10 receive adequate care due to stigma and lack of access.</p>
+</div>
+<div class="card">
+<div class="emoji-big">🤖</div>
+<h3>AI as a Bridge</h3>
+<p>Generic chatbots lack the <span class="highlight">empathy and clinical understanding</span> needed for mental health conversations. A domain-specific fine-tuned model can fill this gap.</p>
+</div>
+</div>
+<p style="font-size:0.6em;color:#a0a0b0;margin-top:20px">Source: WHO, NIMHANS Reports</p>
+</section>
+
+<!-- SLIDE 3: Objectives -->
+<section>
+<h2>🎯 Objectives</h2>
+<div style="text-align:left;max-width:700px;margin:20px auto">
+<ul>
+<li>Fine-tune a <span class="highlight">domain-specific LLM</span> on psychiatric counseling data</li>
+<li>Build an accessible, <span class="highlight">privacy-first</span> wellness chatbot (runs locally via Ollama)</li>
+<li>Provide features beyond chat: <span class="highlight">affirmations</span> and <span class="highlight">guided meditation</span></li>
+<li>Containerize with <span class="highlight">Docker</span> for one-command deployment</li>
+<li>Deploy on <span class="highlight">Hugging Face Spaces</span> and <span class="highlight">Docker Hub</span> for public access</li>
+</ul>
+</div>
+</section>
+
+<!-- SLIDE 4: Tech Stack -->
+<section>
+<h2>🛠️ Technology Stack</h2>
+<div class="grid3">
+<div class="card" style="text-align:center">
+<div class="emoji-big">🧠</div>
+<h3>LLM Engine</h3>
+<p>LLaMA 3.1 8B<br/>Fine-tuned GGUF<br/>Ollama Runtime</p>
+</div>
+<div class="card" style="text-align:center">
+<div class="emoji-big">🖥️</div>
+<h3>Frontend</h3>
+<p>Streamlit<br/>Custom CSS<br/>Base64 Assets</p>
+</div>
+<div class="card" style="text-align:center">
+<div class="emoji-big">🐳</div>
+<h3>DevOps</h3>
+<p>Docker<br/>Shell Scripts<br/>Volume Caching</p>
+</div>
+</div>
+<div style="margin-top:25px">
+<span class="tag">Python 3.11</span>
+<span class="tag">LLaMA 3.1</span>
+<span class="tag">Ollama</span>
+<span class="tag">Streamlit</span>
+<span class="tag">Docker</span>
+<span class="tag">Hugging Face</span>
+<span class="tag">GGUF Quantization</span>
+</div>
+</section>
+
+<!-- SLIDE 5: Model Fine-Tuning -->
+<section>
+<div class="scrollable-content">
+<h2>🧠 Model Fine-Tuning</h2>
+<div class="card">
+<h3>Base Model → Psychiatrist Model</h3>
+<p style="margin-top:10px">
+<span class="highlight">Base:</span> Meta LLaMA 3.1 8B Instruct<br/>
+<span class="highlight">Fine-tuning:</span> Domain-specific psychiatric counseling dataset<br/>
+<span class="highlight">Format:</span> GGUF (quantized for efficient CPU/GPU inference)<br/>
+<span class="highlight">Hosting:</span> Hugging Face Hub → <code>Arekmaurya/psychiatrist-llama-3.1-8b-gguf</code><br/>
+<span class="highlight">Serving:</span> Ollama with custom Modelfile (temperature=0.7, max_tokens=256)
+</p>
+</div>
+<div class="grid2" style="margin-top:15px">
+<div class="card" style="text-align:center">
+<div class="stat-number">8B</div>
+<div class="stat-label">Parameters</div>
+</div>
+<div class="card" style="text-align:center">
+<div class="stat-number">0.7</div>
+<div class="stat-label">Temperature (balanced creativity)</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SLIDE 6: System Architecture -->
+<section>
+<div class="scrollable-content">
+<h2>🏗️ System Architecture</h2>
+<div class="arch-box">
+<div class="arch-flow">
+<div class="arch-node">
+<div class="node-title">👤 User</div>
+<div class="node-sub">Browser</div>
+</div>
+<span class="arch-arrow">→</span>
+<div class="arch-node">
+<div class="node-title">🖥️ Streamlit</div>
+<div class="node-sub">Port 8501</div>
+</div>
+<span class="arch-arrow">→</span>
+<div class="arch-node">
+<div class="node-title">⚙️ Ollama</div>
+<div class="node-sub">LLM Server</div>
+</div>
+<span class="arch-arrow">→</span>
+<div class="arch-node">
+<div class="node-title">🧠 Psychiatrist</div>
+<div class="node-sub">LLaMA 3.1 GGUF</div>
+</div>
+</div>
+<p style="font-size:0.6em;color:#a0a0b0;text-align:center;margin-top:15px">
+All processing runs <span class="highlight">locally</span> — no data sent to external APIs → full privacy
+</p>
+</div>
+<div class="grid2" style="margin-top:10px">
+<div class="card" style="text-align:center">
+<p><span class="highlight">Session State</span><br/>Conversation history managed via Streamlit session with a sliding window of last 6 messages</p>
+</div>
+<div class="card" style="text-align:center">
+<p><span class="highlight">Docker Volume</span><br/>Model weights cached in /root/.ollama to avoid re-downloading on container restart</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SLIDE 7: Features -->
+<section>
+<div class="scrollable-content">
+<h2>✨ Key Features</h2>
+<div class="grid3">
+<div class="card" style="text-align:center">
+<div class="emoji-big">💬</div>
+<h3>AI Chat</h3>
+<p>Empathetic conversations with a fine-tuned psychiatrist model. Maintains context across messages with sliding window.</p>
+</div>
+<div class="card" style="text-align:center">
+<div class="emoji-big">🌞</div>
+<h3>Positive Affirmations</h3>
+<p>On-demand motivational affirmations tailored for stress relief and mental wellness.</p>
+</div>
+<div class="card" style="text-align:center">
+<div class="emoji-big">🧘</div>
+<h3>Guided Meditation</h3>
+<p>AI-generated 5-minute calming meditation scripts with soothing language.</p>
+</div>
+</div>
+<div class="card" style="margin-top:15px;text-align:center">
+<h3>🔒 Privacy-First Design</h3>
+<p>Everything runs locally via Ollama — <span class="highlight">zero data leaves the user's machine</span>. No cloud API calls, no logging of conversations.</p>
+</div>
+</div>
+</section>
+
+<!-- SLIDE 8: Security & Code Quality -->
+<section>
+<h2>🔐 Security & Code Quality</h2>
+<div class="grid2">
+<div class="card">
+<h3>✅ Security Measures</h3>
+<p>
+• <span class="highlight">XSS Protection</span> — All user inputs sanitized via <code>html.escape()</code> before rendering<br/><br/>
+• <span class="highlight">No External APIs</span> — LLM runs locally, no data exfiltration risk<br/><br/>
+• <span class="highlight">Error Handling</span> — All Ollama calls wrapped in try/except with graceful fallbacks
+</p>
+</div>
+<div class="card">
+<h3>✅ Code Practices</h3>
+<p>
+• <span class="highlight">Modular Functions</span> — Separate functions for chat, affirmation, meditation<br/><br/>
+• <span class="highlight">Session Management</span> — Streamlit session state for conversation persistence<br/><br/>
+• <span class="highlight">Fallback Assets</span> — Online background image if local file fails to load
+</p>
+</div>
+</div>
+</section>
+
+<!-- SLIDE 9: Docker & Deployment -->
+<section>
+<h2>🐳 Deployment Pipeline</h2>
+<div class="card">
+<h3>One-Command Deployment</h3>
+<p style="font-size:0.75em;margin-top:10px">
+<code>docker pull harshmaurya2002/wellness-mate:latest</code><br/><br/>
+<code>docker run -p 8501:8501 harshmaurya2002/wellness-mate</code>
+</p>
+</div>
+<div class="grid3" style="margin-top:15px">
+<div class="card" style="text-align:center">
+<div class="emoji-big">🐳</div>
+<h3>Docker Hub</h3>
+<p>Public image with auto-setup</p>
+</div>
+<div class="card" style="text-align:center">
+<div class="emoji-big">🤗</div>
+<h3>HF Spaces</h3>
+<p>Live demo on Hugging Face</p>
+</div>
+<div class="card" style="text-align:center">
+<div class="emoji-big">💻</div>
+<h3>Local Setup</h3>
+<p>pip install + Ollama</p>
+</div>
+</div>
+<p style="font-size:0.55em;color:#a0a0b0;margin-top:15px">
+Dockerfile uses <code>python:3.11-slim</code> base • Ollama installed at build time • Model created on first run & cached via Docker volume
+</p>
+</section>
+
+<!-- SLIDE 10: Improvements Done -->
+<section>
+<div class="scrollable-content">
+<h2>🔧 Improvements & Optimizations</h2>
+<div class="grid2">
+<div class="imp-before">
+<h3>❌ Before</h3>
+<p>• Duplicate system prompts in main.py & Modelfile</p>
+<p>• Unpinned dependencies — risk of breaking updates</p>
+<p>• Meditation truncated at 256 tokens (~190 words)</p>
+<p>• Affirmation/meditation output lost on page rerun</p>
+<p>• CSS padding override bug</p>
+<p>• No Docker health check</p>
+</div>
+<div class="imp-after">
+<h3>✅ After</h3>
+<p>• Single source of truth for system prompt</p>
+<p>• Pinned versions: <code>streamlit==1.45.1</code>, <code>ollama==0.4.8</code></p>
+<p>• Meditation uses 1024 tokens for full scripts</p>
+<p>• Results persisted in session state across reruns</p>
+<p>• Fixed CSS shorthand property conflict</p>
+<p>• Added HEALTHCHECK for container readiness</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SLIDE 11: Improvements continued -->
+<section>
+<div class="scrollable-content">
+<h2>🔧 Additional Improvements</h2>
+<div class="grid2">
+<div class="imp-before">
+<h3>❌ Before</h3>
+<p>• User chat bubbles not visually right-aligned</p>
+<p>• Footer had broken "Contact Us" placeholder link</p>
+<p>• Hardcoded copyright year (2025)</p>
+<p>• Sensitive PII file (resume) committed to repo</p>
+</div>
+<div class="imp-after">
+<h3>✅ After</h3>
+<p>• Proper chat UI with <code>margin-left:auto</code> alignment</p>
+<p>• Clean footer with working links</p>
+<p>• Dynamic copyright year</p>
+<p>• PII removed, added to .gitignore</p>
+</div>
+</div>
+<div class="card" style="margin-top:20px;text-align:center">
+<h3>Impact Summary</h3>
+<div style="display:flex;justify-content:center;gap:40px;margin-top:15px">
+<div><div class="stat-number">10+</div><div class="stat-label">Issues Identified</div></div>
+<div><div class="stat-number">100%</div><div class="stat-label">Critical Issues Fixed</div></div>
+<div><div class="stat-number">4×</div><div class="stat-label">Meditation Token Limit</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SLIDE 12: Project Structure -->
+<section>
+<div class="scrollable-content">
+<h2>📁 Project Structure</h2>
+<div class="card" style="text-align:left;max-width:800px;margin:20px auto;overflow-x:auto;">
+<pre style="color:var(--mint);font-size:0.65em;line-height:1.8;margin:0;background:transparent">
+Wellness-Mate/
+├── main.py              # Streamlit application
+├── Modelfile            # Ollama model config
+├── Dockerfile           # Docker build file
+├── start.sh             # Container startup script
+├── requirements.txt     # Pinned Python dependencies
+├── background.png       # UI background asset
+├── .gitignore           # Git ignore rules
+└── .dockerignore        # Docker ignore rules
+</pre>
+</div>
+<p style="font-size:0.6em;color:#a0a0b0;margin-top:10px">
+Clean, minimal structure — single-file app with infrastructure-as-code via Docker
+</p>
+</div>
+</section>
+
+<!-- SLIDE 13: Future Scope -->
+<section>
+<div class="scrollable-content">
+<h2>🚀 Future Scope</h2>
+<div class="grid2">
+<div class="card">
+<div class="emoji-big">📊</div>
+<h3>Mood Tracking</h3>
+<p>Track user mood over time with visual charts and trend analysis for self-awareness.</p>
+</div>
+<div class="card">
+<div class="emoji-big">🗣️</div>
+<h3>Voice Integration</h3>
+<p>Add speech-to-text and text-to-speech for hands-free meditation and conversations.</p>
+</div>
+<div class="card">
+<div class="emoji-big">🌐</div>
+<h3>Multi-Language</h3>
+<p>Support Hindi, regional languages to reach underserved populations in India.</p>
+</div>
+<div class="card">
+<div class="emoji-big">📱</div>
+<h3>Mobile App</h3>
+<p>React Native or Flutter wrapper for Android/iOS with offline model support.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SLIDE 14: References -->
+<section>
+<h2>📚 References</h2>
+<div style="text-align:left;max-width:700px;margin:20px auto">
+<ul>
+<li>Meta AI — <em>LLaMA 3.1: Open Foundation Models</em> (2024)</li>
+<li>Ollama — <em>Local LLM Runtime</em> — ollama.com</li>
+<li>Hugging Face — <em>GGUF Model Format & Transformers</em></li>
+<li>Streamlit — <em>The fastest way to build data apps</em> — streamlit.io</li>
+<li>Docker — <em>Containerization Platform</em> — docker.com</li>
+<li>WHO — <em>Mental Health in India: Statistics & Reports</em></li>
+<li>NIMHANS — <em>National Mental Health Survey of India</em></li>
+</ul>
+</div>
+</section>
+
+<!-- SLIDE 15: Thank You -->
+<section>
+<p style="font-size:3em;margin-bottom:0">🌿</p>
+<h1>Thank You</h1>
+<p class="subtitle">Questions & Discussion</p>
+<div style="margin-top:40px">
+<p style="font-size:0.6em;color:#a0a0b0">
+<strong style="color:var(--mint)">Harsh Maurya</strong><br/><br/>
+<span class="tag">📧 contactharshmaurya@gmail.com</span>
+<span class="tag">🔗 linkedin.com/in/harsh-mauryaa</span>
+<span class="tag">🐙 github.com/Arekmaurya</span>
+</p>
+</div>
+<div style="margin-top:30px">
+<span class="tag">🐳 Docker Hub: harshmaurya2002/wellness-mate</span>
+<span class="tag">🤗 HF: Arekmaurya/wellness-mate</span>
+</div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  slideNumber: 'c/t',
+  transition: 'slide',
+  transitionSpeed: 'default',
+  backgroundTransition: 'fade',
+  center: true,
+  width: 1200,
+  height: 700,
+  margin: 0.04
+});
+</script>
+</body>
+</html>
